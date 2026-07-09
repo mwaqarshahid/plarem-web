@@ -1,26 +1,182 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-ink: #07080d;
+  --color-surface: #0e1017;
+  --color-raised: #141726;
+  --color-line: rgba(255, 255, 255, 0.08);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-indigo-core: #4f5be8;
+  --color-indigo-bright: #9ba3ff;
+  --color-teal-core: #00a98f;
+  --color-teal-bright: #3dd9bd;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-fg: #eceef8;
+  --color-fg-muted: #9297ab;
+  --color-fg-faint: #5c6076;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-ring: ring 3.2s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+  --animate-ring-late: ring 3.2s cubic-bezier(0.2, 0.6, 0.4, 1) 1.6s infinite;
+  --animate-shimmer: shimmer 9s ease-in-out infinite alternate;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0.4deg);
+    }
+    50% {
+      transform: translateY(-14px) rotate(-0.4deg);
+    }
+  }
+
+  @keyframes ring {
+    0% {
+      transform: scale(0.45);
+      opacity: 0.9;
+    }
+    100% {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translate3d(-4%, -2%, 0) scale(1);
+    }
+    100% {
+      transform: translate3d(4%, 3%, 0) scale(1.08);
+    }
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-indigo-core) 55%, transparent);
+  color: #fff;
+}
+
+/* ---------- scroll-reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.6, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- decorative ---------- */
+.hero-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255, 255, 255, 0.07) 1px,
+    transparent 0
+  );
+  background-size: 34px 34px;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, black 30%, transparent 72%);
+}
+
+.glass {
+  background: linear-gradient(
+    170deg,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.015)
+  );
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(8px);
+}
+
+.gradient-text {
+  background: linear-gradient(
+    92deg,
+    var(--color-indigo-bright) 0%,
+    #c3c8ff 45%,
+    var(--color-teal-bright) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cta-border {
+  position: relative;
+  background:
+    linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+    linear-gradient(
+        120deg,
+        rgba(155, 163, 255, 0.55),
+        rgba(61, 217, 189, 0.4),
+        rgba(155, 163, 255, 0.15)
+      )
+      border-box;
+  border: 1px solid transparent;
+}
+
+/* prose for legal pages */
+.prose-dark h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-fg);
+  margin: 2.2rem 0 0.7rem;
+}
+.prose-dark h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-fg);
+  margin: 1.6rem 0 0.5rem;
+}
+.prose-dark p,
+.prose-dark li {
+  color: var(--color-fg-muted);
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+  font-size: 0.95rem;
+}
+.prose-dark ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+.prose-dark a {
+  color: var(--color-indigo-bright);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-dark strong {
+  color: var(--color-fg);
 }

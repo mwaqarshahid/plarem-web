@@ -66,11 +66,12 @@ Free. No ads. No account.`,
   platforms: ["Android"],
   iosStatus: "coming soon",
 
-  /** Links — TODO: replace once the store listings are live. */
-  playStoreUrl: "#", // e.g. https://play.google.com/store/apps/details?id=com.plarem
-  appStoreUrl: null as string | null, // e.g. https://apps.apple.com/app/plarem/id...
+  /** Links — update appStoreUrl once the iOS listing is live. */
+  playStoreUrl:
+    "https://play.google.com/store/apps/details?id=com.plarem",
+  appStoreUrl: null as string | null,
 
-  supportEmail: "support@plarem.app", // TODO: replace with a monitored inbox
+  supportEmail: "support@plarem.app",
 
   company: "Plarem",
   effectiveDate: "July 9, 2026",

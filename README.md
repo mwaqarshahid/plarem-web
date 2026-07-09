@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plarem Web
 
-## Getting Started
+Marketing site for [Plarem](https://plarem.app) — a location-based reminder app for Android. Attach a task to a place and get notified the moment you arrive, even with the app closed.
 
-First, run the development server:
+Built with [Next.js](https://nextjs.org) 16, React 19, and Tailwind CSS 4.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Pages
+
+| Route | Purpose |
+|-------|---------|
+| `/` | Landing page — features, how it works, FAQ, download CTA |
+| `/about` | Product story and values |
+| `/support` | Troubleshooting and contact |
+| `/press` | Press kit, store-listing copy, brand assets |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
+
+## Product copy
+
+All store-listing text, FAQs, and feature descriptions live in a single file:
+
+```
+lib/app-data.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Edit that file to update copy across every page at once.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+Copy `.env.example` to `.env.local` and set your production URL:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cp .env.example .env.local
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
+The site is designed for [Vercel](https://vercel.com). Set `NEXT_PUBLIC_SITE_URL` to your production domain in the Vercel project environment variables.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build   # verify locally
+npx vercel      # deploy
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Related
+
+- Mobile app repo: `plarem` (React Native, Android package `com.plarem`)
