@@ -6,10 +6,11 @@
   --color-raised: #141726;
   --color-line: rgba(255, 255, 255, 0.08);
 
-  --color-indigo-core: #4f5be8;
-  --color-indigo-bright: #9ba3ff;
-  --color-teal-core: #00a98f;
-  --color-teal-bright: #3dd9bd;
+  /* Brand palette — mirrors mobile brand/mark.js + src/constants/brand.ts */
+  --color-indigo-core: #2b9fd8;
+  --color-indigo-bright: #5bb8e8;
+  --color-teal-core: #d7df23;
+  --color-teal-bright: #e4ea5a;
 
   --color-fg: #eceef8;
   --color-fg-muted: #9297ab;
@@ -125,7 +126,7 @@ body {
   background: linear-gradient(
     92deg,
     var(--color-indigo-bright) 0%,
-    #c3c8ff 45%,
+    #9fd4ef 45%,
     var(--color-teal-bright) 100%
   );
   -webkit-background-clip: text;
@@ -139,9 +140,9 @@ body {
     linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
     linear-gradient(
         120deg,
-        rgba(155, 163, 255, 0.55),
-        rgba(61, 217, 189, 0.4),
-        rgba(155, 163, 255, 0.15)
+        rgba(43, 159, 216, 0.55),
+        rgba(215, 223, 35, 0.4),
+        rgba(43, 159, 216, 0.15)
       )
       border-box;
   border: 1px solid transparent;

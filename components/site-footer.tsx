@@ -37,8 +37,8 @@ export function SiteFooter() {
           <div className="max-w-xs">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-fg-muted">
-              {app.tagline}. Reminders that trigger the moment you arrive —
-              private, battery-smart, and free.
+              {app.tagline}. Reminders that trigger the moment you arrive.
+              Private, battery-smart and free.
             </p>
           </div>
 
@@ -69,7 +69,7 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {app.company}. All rights reserved.
           </p>
-          <p className="italic">Arrive. Remember.</p>
+          <p className="italic">{app.motto}</p>
         </div>
       </div>
     </footer>

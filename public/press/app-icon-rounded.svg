@@ -8,10 +8,10 @@
     <stop offset="0%" stop-color="rgba(255,255,255,0.16)"/>
     <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
   </radialGradient>
-  <clipPath id="tile"><rect width="1024" height="1024" /></clipPath>
+  <clipPath id="tile"><rect width="1024" height="1024" rx="224"/></clipPath>
 </defs>
-<rect width="1024" height="1024"  fill="url(#bg)"/>
-<rect width="1024" height="1024"  fill="url(#glow)"/>
+<rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
+<rect width="1024" height="1024" rx="224" fill="url(#glow)"/>
 <g opacity="0.14" clip-path="url(#tile)">
 <g transform="translate(526, 526) scale(7.4) translate(-64, -60)"><path d="M 25.4 43.6 A 40 40 0 0 1 47.1 17.7" fill="none" stroke="#000000" stroke-width="7" stroke-linecap="round"/>
   <path d="M 80.9 17.7 A 40 40 0 0 1 102.6 43.6" fill="none" stroke="#000000" stroke-width="7" stroke-linecap="round"/>

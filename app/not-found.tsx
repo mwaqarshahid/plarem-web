@@ -10,8 +10,7 @@ export default function NotFound() {
         This page isn&apos;t on the map.
       </h1>
       <p className="mt-4 text-fg-muted">
-        The link may be broken, or the page may have moved. Head back home and
-        try again.
+        The link may be broken or the page may have moved.
       </p>
       <Link
         href="/"

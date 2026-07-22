@@ -112,8 +112,8 @@ export default function Home() {
             <Reveal delay={160}>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-fg-muted">
                 Attach a task to a place. The moment you arrive, {app.name}{" "}
-                plays your reminder — even with the app closed and your phone
-                in your pocket.
+                notifies you. Even with the app closed, without internet and your phone in your
+                pocket.
               </p>
             </Reveal>
 
@@ -289,7 +289,7 @@ export default function Home() {
                 <em className="gradient-text font-serif italic">again.</em>
               </h2>
               <p className="relative mx-auto mt-5 max-w-md text-fg-muted">
-                {app.motto} — set a reminder for the next place you go, and let
+                Set a reminder for the next place you go and let
                 your phone do the remembering.
               </p>
               <div className="relative mt-9 flex justify-center">

@@ -2,6 +2,8 @@
  * Single source of truth for all product copy — including the exact
  * store-listing fields for Google Play and the Apple App Store.
  * Edit here; every page reads from this file.
+ *
+ * Plarem = Place Reminder (brand expansion). Motto is separate.
  */
 
 export const SITE_URL =
@@ -9,7 +11,8 @@ export const SITE_URL =
 
 export const app = {
   name: "Plarem",
-  tagline: "Play a Reminder on Arrival",
+  /** Brand expansion — Pla·rem = Place Reminder */
+  tagline: "Place Reminder",
   motto: "Arrive. Remember.",
 
   /** App Store subtitle — must stay ≤ 30 characters. */
@@ -20,7 +23,7 @@ export const app = {
     "Attach tasks to places. Get reminded the moment you arrive — even offline.",
 
   /** Google Play / App Store long description. */
-  longDescription: `Plarem turns places into reminders. Attach a task to a location, choose an arrival radius, and Plarem notifies you the moment you get there — even if the app is closed and your phone is in your pocket.
+  longDescription: `Plarem (Place Reminder) turns places into reminders. Attach a task to a location, choose an arrival radius, and Plarem notifies you the moment you get there — even if the app is closed and your phone is in your pocket.
 
 No times to guess. No alarms that fire while you're still on the bus. The location itself is the trigger.
 
@@ -40,7 +43,7 @@ HOW IT WORKS
 2. Pin a place — search, tap the map, or use your current location.
 3. Choose the radius and save. Plarem hands the geofence to the OS and gets out of the way.
 
-When you arrive, your phone plays the reminder. Tap it and get the job done.
+When you arrive, Plarem notifies you. Tap the notification and get the job done.
 
 PERMISSIONS, EXPLAINED
 
@@ -53,6 +56,7 @@ Free. No ads. No account.`,
   contentRating: "Everyone",
   keywords: [
     "location reminder",
+    "place reminder",
     "geofence reminder",
     "arrival alert",
     "gps reminder",
@@ -147,6 +151,6 @@ export const howItWorks = [
   {
     step: "03",
     title: "Live your life",
-    body: "Plarem hands the geofence to the OS. The moment you arrive, it plays your reminder.",
+    body: "Plarem hands the geofence to the OS. The moment you arrive, it notifies you.",
   },
 ] as const;

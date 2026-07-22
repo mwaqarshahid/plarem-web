@@ -24,12 +24,12 @@ export default function AboutPage() {
         </p>
         <p>
           {app.name} — short for{" "}
-          <strong>Pla</strong>y a <strong>Rem</strong>inder — flips the model.
+          <strong>Pla</strong>ce <strong>Rem</strong>inder — flips the model.
           You attach a task to a place and choose how close you need to be.
           From that moment your phone&apos;s operating system watches the
           boundary using the same low-power geofencing that powers the rest of
           your device, and {app.name} stays out of the way. When you arrive,
-          the reminder plays. That&apos;s the whole product.
+          you get notified. That&apos;s the whole product.
         </p>
 
         <h2>What we believe</h2>

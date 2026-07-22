@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Instrument_Serif } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { BackToTop } from "@/components/back-to-top";
 import { app, SITE_URL } from "@/lib/app-data";
 import "./globals.css";
 
@@ -20,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${app.name} — ${app.tagline}`,
+    default: `${app.name} - ${app.tagline}`,
     template: `%s · ${app.name}`,
   },
   description: app.shortDescription,
@@ -60,8 +61,11 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main id="top" className="flex-1">
+          {children}
+        </main>
         <SiteFooter />
+        <BackToTop />
       </body>
     </html>
   );
